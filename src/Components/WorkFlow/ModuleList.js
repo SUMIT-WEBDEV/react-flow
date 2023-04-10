@@ -4,6 +4,7 @@ import Pagination from "../Pagination/Pagination";
 import "./ModuleList.css";
 import Loader from "./Loader/Loader";
 
+
 export default ({ modules, onPageChange, currentPage }) => {
   const onDragStart = (event, module) => {
     const moduleText = `

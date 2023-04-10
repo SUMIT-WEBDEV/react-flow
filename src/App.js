@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 import DnDFlow from "./Components/WorkFlow/DnDFlow";
@@ -18,14 +18,14 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <Routes>
           <Route path="/workflow/:id" element={<DnDFlow list={list} />} />
           <Route path="/" element={<List list={list} />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
