@@ -1,0 +1,10 @@
+.moduleList{
+    display: flex;   
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.moduleList__Pagination{
+    margin-bottom: 50px
+} 

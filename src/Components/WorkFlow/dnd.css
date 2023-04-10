@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.dndflow {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: flex-start;
+  border: 2px solid #cfd9e6
+}
+
+.reactflow-wrapper {
+  height: 100%;
+
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./Image/background.jpg");
+ 
+}
+
+.dndnode {
+  background-color: #fff;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.dndnode.input {
+  color: #1a73e8;
+}
+
+
+.sidebar__Left {
+  flex:2.4;
+  border-right: 2px solid #cfd9e6;
+  margin-top: 0px;
+}
+
+.reactflow-wrapper {
+  flex:7.6;
+}
+
+.workFlow__Name {
+  font-size: 20px;
+  padding: 15px 15px 23px 15px
+}
+
+
+.react-flow__handle {
+  opacity: 0;
+}
+
+.react-flow__edge-path path {
+  fill: none;
+  stroke-linecap: round;
+  marker-end: url(#arrow);
+}

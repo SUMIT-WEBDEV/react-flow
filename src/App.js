@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import React, { useEffect, useState } from "react";
+import DnDFlow from "./Components/WorkFlow/DnDFlow";
+import List from "./Components/List";
+import axios from "axios";
 
 function App() {
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://64307b10d4518cfb0e50e555.mockapi.io/workflow")
+      .then((res) => {
+        setList(res.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/workflow/:id" element={<DnDFlow list={list} />} />
+          <Route path="/" element={<List list={list} />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
